@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-    "rest_framework",
+    'rest_framework',
     'tickets',
 ]
 
-REST_FRAMEWORK = []
+# REST_FRAMEWORK = []
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
