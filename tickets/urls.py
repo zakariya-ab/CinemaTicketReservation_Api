@@ -2,6 +2,6 @@ from django.urls import path
 from tickets import views
 
 urlpatterns = [
-    path('guests/', views.guests_list),
-    path('guests/<int:pk>', views.guest_details),
+    path('movies/', views.MovieList.as_view()),
+    path('movies/<int:pk>', views.MovieDetails.as_view()),
 ]
