@@ -147,14 +147,26 @@ Function based views
     generic class-based views
 """
 
-from tickets.models import Movie
-from tickets.serializers import MovieSerializer
-from rest_framework import generics
+# from tickets.models import Movie
+# from tickets.serializers import MovieSerializer
+# from rest_framework import generics
 
-class MovieList(generics.ListCreateAPIView):
-    queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+# class MovieList(generics.ListCreateAPIView):
+#     queryset = Movie.objects.all()
+#     serializer_class = MovieSerializer
 
-class MovieDetails(generics.RetrieveUpdateDestroyAPIView):
+# class MovieDetails(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Movie.objects.all()
+#     serializer_class = MovieSerializer
+
+"""
+    viewsets
+"""
+
+from .models import Movie
+from .serializers import MovieSerializer
+from rest_framework import viewsets
+
+class viewsets_movie(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
