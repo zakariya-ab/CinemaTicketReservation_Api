@@ -163,10 +163,36 @@ Function based views
     viewsets
 """
 
-from .models import Movie
-from .serializers import MovieSerializer
+from .models import *
+from .serializers import *
 from rest_framework import viewsets
 
 class viewsets_movie(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
+class viewsets_user(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class viewsets_reservation(viewsets.ModelViewSet):
+    queryset = Reservation.objects.all()
+    serializer_class = ReservationSerializer
+
+class viewsets_cinema(viewsets.ModelViewSet):
+    queryset = Cinema.objects.all()
+    serializer_class = CinemaSerializer
+
+class viewsets_room(viewsets.ModelViewSet):
+    queryset = Room.objects.all()
+    serializer_class = RoomSerializer
+
+class viewsets_screening(viewsets.ModelViewSet):
+    queryset = Screening.objects.all()
+    serializer_class = ScreeningSerializer
+
+class viewsets_seat(viewsets.ModelViewSet):
+    queryset = Seat.objects.all()
+    serializer_class = SeatSerializer
+
+

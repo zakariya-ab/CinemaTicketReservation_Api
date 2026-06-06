@@ -18,8 +18,8 @@ class Movie(models.Model):
 class Cinema(models.Model):
     name = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
-    adress = models.CharField(max_length=400)
-    phone = models.CharField(max_length=10)
+    address = models.CharField(max_length=400)
+    phone = models.CharField(max_length=15)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)  
@@ -107,12 +107,13 @@ class ReservationSeat(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)  
+    updated_at = models.DateTimeField(auto_now=True) 
+
 
 
 
 class Payment(models.Model):
-    class PayemntMethodes(models.TextChoices):
+    class PaymentMethods(models.TextChoices):
         CARD = 'card'
         CASH = 'cash'
         WALLET = 'wallet'
@@ -127,8 +128,8 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     methode = models.CharField(
         max_length=30,
-        choices=PayemntMethodes.choices,
-        default=PayemntMethodes.CASH
+        choices=PaymentMethods.choices,
+        default=PaymentMethods.CASH
     )
     status = models.CharField(
         max_length=40,
